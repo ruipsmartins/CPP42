@@ -16,7 +16,7 @@ int	main(int argc, char const *argv[])
 {
 	double x,y,z;
 
-	x = 10;
+	x = 11;
 	y = 5;
 	z = (x + 10)/(y*3);
 
