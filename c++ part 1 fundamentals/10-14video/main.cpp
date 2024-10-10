@@ -14,14 +14,16 @@
 
 int	main(int argc, char const *argv[])
 {
-	double x,y,z;
+	double sales = 95000;
+	double state_tax = sales * 0.04;
+	double county_tax = sales * 0.02;
+	double total_tax =  state_tax + county_tax;
 
-	x = 11;
-	y = 5;
-	z = (x + 10)/(y*3);
 
-	std::cout	<< "z = " << z << std::endl;
-				<< "x = " << x << std::endl;
+	std::cout	<< "sales = " << sales << std::endl
+				<< "state tax = " << state_tax << std::endl
+				<< "county tax = " << county_tax << std::endl
+				<< "total tax = " << total_tax << std::endl;
 
 	return 0;
 }
