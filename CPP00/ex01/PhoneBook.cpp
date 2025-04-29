@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/29 17:12:58 by ruidos-s          #+#    #+#             */
+/*   Updated: 2025/04/29 17:12:59 by ruidos-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : contactCount(0), oldestContact(0) {}
@@ -11,32 +23,29 @@ void PhoneBook::displayContactDetails(int i) const
 	std::cout << "Secret: " << contacts[i].getSecret() << std::endl;
 }
 
+static std::string formatField(const std::string &str)
+{
+	if (str.length() > 10)
+		return str.substr(0, 9) + ".";
+	return str;
+}
+
 void PhoneBook::displayContactList() const
 {
 	std::cout << std::setw(10) << "index" << "|"
 			  << std::setw(10) << "First Name" << "|"
 			  << std::setw(10) << "Last Name" << "|"
 			  << std::setw(10) << "Nickname" << std::endl;
+
 	for (int i = 0; i < contactCount; i++)
 	{
-		std::cout << std::setw(10) << i << "|";
-
-		std::string first_name = contacts[i].getFirstName();
-		if (first_name.length() > 10)
-			first_name = first_name.substr(0, 9) + ".";
-		std::cout << std::setw(10) << first_name << "|";
-
-		std::string lastName = contacts[i].getLastName();
-		if (lastName.length() > 10)
-			lastName = lastName.substr(0, 9) + ".";
-		std::cout << std::setw(10) << lastName << "|";
-
-		std::string nickname = contacts[i].getNickname();
-		if (nickname.length() > 10)
-			nickname = nickname.substr(0, 9) + ".";
-		std::cout << std::setw(10) << nickname << std::endl;
+		std::cout << std::setw(10) << i << "|"
+				  << std::setw(10) << formatField(contacts[i].getFirstName()) << "|"
+				  << std::setw(10) << formatField(contacts[i].getLastName()) << "|"
+				  << std::setw(10) << formatField(contacts[i].getNickname()) << std::endl;
 	}
 }
+
 void PhoneBook::searchContacts() const
 {
 	if (contactCount == 0)
@@ -59,21 +68,15 @@ void PhoneBook::searchContacts() const
 		if (index >= 0 && index < contactCount)
 			displayContactDetails(index);
 		else
-		{
-			std::cout << "The index is out of range or wrong" << std::endl;
-			searchContacts();
-		}
+			std::cout << "The index is out of range" << std::endl;
 	}
 	else
-	{
 		std::cout << "Invalid input. Please enter a valid number." << std::endl;
-		searchContacts();
-	}
 }
 
 void PhoneBook::addContact()
 {
-	if (contactCount < 2)
+	if (contactCount < 8)
 	{
 		contacts[contactCount].newContact();
 		contactCount++;
@@ -81,6 +84,6 @@ void PhoneBook::addContact()
 	else
 	{
 		contacts[oldestContact].newContact();
-		oldestContact = (oldestContact + 1) % 2;
+		oldestContact = (oldestContact + 1) % 8;
 	}
 }
