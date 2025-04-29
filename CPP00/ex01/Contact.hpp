@@ -17,10 +17,7 @@ class Contact
 		void setNickname(const std::string& nickname);
 		void setPhoneNumber(const std::string& phone_number);
 		void setSecret(const std::string& secret);
-		void newContact(Contact& contact);
-
-		
-
+		void newContact();
 	
 		std::string getFirstName() const;
 		std::string getLastName() const;
@@ -28,6 +25,5 @@ class Contact
 		std::string getPhoneNumber() const;
 		std::string getSecret() const;
 };
-
 
 #endif

@@ -15,12 +15,13 @@ int main(void)
 		std::cout << "\nEnter a command: ";
 		std::getline(std::cin, command);
 
-		if (command == "ADD")
+		if (command == "ADD" || command == "a")
 			phoneBook.addContact();
-		else if (command == "SEARCH")
+		else if (command == "SEARCH" || command == "s")
 			phoneBook.searchContacts();
-		else if (command == "EXIT")
+		else if (command == "EXIT" || command == "e")
 			break;
+
 	}
 
 	return 0;
