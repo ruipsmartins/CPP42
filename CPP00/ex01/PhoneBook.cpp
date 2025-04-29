@@ -1,8 +1,4 @@
 #include "PhoneBook.hpp"
-#include <iomanip>
-#include <iostream>
-#include <sstream>
-#include <string>
 
 PhoneBook::PhoneBook() : contactCount(0), oldestContact(0){}
 
