@@ -1,6 +1,6 @@
 NAME = phonebook
 SRCS = main.cpp PhoneBook.cpp Contact.cpp
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -10,11 +10,13 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+
+objs/%.o: %.cpp
+	@mkdir -p objs
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf objs
 
 fclean: clean
 	rm -f $(NAME)

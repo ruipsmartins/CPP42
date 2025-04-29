@@ -1,6 +1,6 @@
 NAME = teste
 
-SRCS = 62_14_Parsing_Strings.cpp
+SRCS =  main.cpp Point.cpp
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++
