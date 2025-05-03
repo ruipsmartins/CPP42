@@ -6,7 +6,7 @@
 /*   By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:48:06 by ruidos-s          #+#    #+#             */
-/*   Updated: 2025/05/03 12:03:44 by ruidos-s         ###   ########.fr       */
+/*   Updated: 2025/05/03 12:15:20 by ruidos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,16 @@ private:
 	std::string name;
 
 public:
+	Zombie();
 	Zombie(std::string name);
 	~Zombie(void);
 
 	void setName(const std::string name);
 	void announce(void);
 };
+
+
+Zombie* zombieHorde( int N, std::string name );
+
 
 #endif
