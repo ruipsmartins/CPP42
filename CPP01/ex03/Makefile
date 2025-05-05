@@ -6,12 +6,17 @@
 #    By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/29 17:13:07 by ruidos-s          #+#    #+#              #
-#    Updated: 2025/05/03 13:47:20 by ruidos-s         ###   ########.fr        #
+#    Updated: 2025/05/03 15:55:05 by ruidos-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brain
-SRCS = main.cpp
+NAME = unnecessary_violence
+
+SRCS = main.cpp \
+       Weapon.cpp \
+       HumanA.cpp \
+       HumanB.cpp
+
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++
