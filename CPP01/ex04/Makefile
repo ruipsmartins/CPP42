@@ -6,7 +6,7 @@
 #    By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/29 17:13:07 by ruidos-s          #+#    #+#              #
-#    Updated: 2025/05/05 17:23:43 by ruidos-s         ###   ########.fr        #
+#    Updated: 2025/05/06 10:41:02 by ruidos-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,6 @@ fclean: clean
 re: fclean all
 
 valgrind:
-	valgrind ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=no ./$(NAME) example.txt Shadow Whiskers
 
 .PHONY: all clean fclean re
