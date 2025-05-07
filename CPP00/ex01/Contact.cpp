@@ -6,11 +6,12 @@
 /*   By: ruidos-s <ruidos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:12:38 by ruidos-s          #+#    #+#             */
-/*   Updated: 2025/05/07 11:46:06 by ruidos-s         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:43:48 by ruidos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
 
 void Contact::setFirstName(const std::string &first_name)
 {
@@ -37,59 +38,63 @@ void Contact::setSecret(const std::string &secret)
 	this->secret = secret;
 }
 
+std::string Contact::promptInput(const std::string &fieldName)
+{
+	std::string input;
+
+	do
+	{
+		std::cout << "Enter " << fieldName << ": " << std::endl;
+		if (!std::getline(std::cin, input))
+			return "";
+		if (input.empty())
+			std::cout << "Input cannot be empty" << std::endl;
+		if (fieldName.compare("phone number") == 0)
+		{
+			long number;
+			std::stringstream ss(input);
+			if ((ss >> number) && ss.eof() && number > 0)
+				break;
+			else
+			{
+				std::cout << "Invalid input. Please enter a valid phone number." << std::endl;
+				input.clear();
+			}
+		}
+
+	} while (input.empty());
+
+	return input;
+}
+
 void Contact::newContact()
 {
 	std::string input;
 
-	do {
-		std::cout << "Enter first name: " << std::endl;
-		if (!std::getline(std::cin, input))
-			return;
-		if (input.empty())
-			std::cout << "Input cannot be empty" << std::endl;
-		else
-			this->setFirstName(input);
-	} while (input.empty());
+	input = promptInput("first name");
+	if (input.empty())
+		return;
+	this->setFirstName(input);
 
-	do {
-		std::cout << "Enter last name: " << std::endl;
-		if (!std::getline(std::cin, input))
-			return;
-		if (input.empty())
-			std::cout << "Input cannot be empty" << std::endl;
-		else
-			this->setLastName(input);
-	} while (input.empty());
+	input = promptInput("last name");
+	if (input.empty())
+		return;
+	this->setLastName(input);
 
-	do {
-		std::cout << "Enter nickname: " << std::endl;
-		if (!std::getline(std::cin, input))
-			return;
-		if (input.empty())
-			std::cout << "Input cannot be empty" << std::endl;
-		else
-			this->setNickname(input);
-	} while (input.empty());
+	input = promptInput("nickname");
+	if (input.empty())
+		return;
+	this->setNickname(input);
 
-	do {
-		std::cout << "Enter phone number: " << std::endl;
-		if (!std::getline(std::cin, input))
-			return;
-		if (input.empty())
-			std::cout << "Input cannot be empty" << std::endl;
-		else
-			this->setPhoneNumber(input);
-	} while (input.empty());
+	input = promptInput("phone number");
+	if (input.empty())
+		return;
+	this->setPhoneNumber(input);
 
-	do {
-		std::cout << "Enter darkest secret: " << std::endl;
-		if (!std::getline(std::cin, input))
-			return;
-		if (input.empty())
-			std::cout << "Input cannot be empty" << std::endl;
-		else
-			this->setSecret(input);
-	} while (input.empty());
+	input = promptInput("darkest secret");
+	if (input.empty())
+		return;
+	this->setSecret(input);
 
 	std::cout << "\nContact saved successfully!" << std::endl;
 }
