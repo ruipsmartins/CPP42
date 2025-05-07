@@ -30,17 +30,33 @@ Harl::~Harl(void)
 	std::cout << "Harl destructor called" << std::endl;
 }
 
+
 void Harl::complain(std::string level)
 {
-	void (Harl::*f[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	//void (Harl::*f[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	
-	for (int i = 0; i < 4; i++)
+	int i;
+	for (i = 0; i < 4; i++)
 	{
 		if (level == levels[i])
 		{
-			(this->*f[i])();
-			return;
+			break;
 		}
 	}	
+
+	switch (i)
+	{
+		case 0:
+			this->debug();
+		case 1:
+			this->info();
+		case 2:
+			this->warning();
+		case 3:
+			this->error();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		break;
+	}
 }

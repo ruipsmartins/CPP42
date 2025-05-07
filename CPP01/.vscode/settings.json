@@ -64,6 +64,7 @@
 		"__nullptr": "cpp",
 		"*.tcc": "cpp",
 		"codecvt": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"ranges": "cpp"
 	}
 }
