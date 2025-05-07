@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ruidos-s <ruidos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:11:54 by ruidos-s          #+#    #+#             */
-/*   Updated: 2025/04/29 17:12:04 by ruidos-s         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:18:36 by ruidos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ private:
 
 public:
 	PhoneBook();
+	~PhoneBook();
 	void addContact();
 	void searchContacts() const;
 	void displayContactList() const;

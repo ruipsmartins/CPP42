@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ruidos-s <ruidos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:12:28 by ruidos-s          #+#    #+#             */
-/*   Updated: 2025/04/29 17:12:31 by ruidos-s         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:15:24 by ruidos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,16 @@ int main(void)
 	std::string command;
 
 	std::cout << "Welcome to your awesome phonebook!" << std::endl;
-	std::cout << "Available commands: ADD, SEARCH, EXIT" << std::endl;
 
 	while (true)
 	{
-		std::cout << "\nEnter a command: ";
-		std::getline(std::cin, command);
-
-		if (command == "ADD")
-			phoneBook.addContact();
-		else if (command == "SEARCH")
-			phoneBook.searchContacts();
-		else if (command == "EXIT")
+		std::cout << "\nEnter a command: ADD, SEARCH, EXIT" << std::endl;
+		if (!std::getline(std::cin, command) || command.compare("EXIT") == 0)
 			break;
+		else if (command.compare("ADD") == 0)
+			phoneBook.addContact();
+		else if (command.compare("SEARCH") == 0)
+			phoneBook.searchContacts();
 	}
 
 	return 0;

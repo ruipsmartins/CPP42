@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ruidos-s <ruidos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:12:58 by ruidos-s          #+#    #+#             */
-/*   Updated: 2025/04/29 17:12:59 by ruidos-s         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:19:56 by ruidos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : contactCount(0), oldestContact(0) {}
+
+PhoneBook::~PhoneBook()
+{
+	std::cout << "Closing phonebook" << std::endl;
+}
 
 void PhoneBook::displayContactDetails(int i) const
 {

@@ -61,6 +61,8 @@
 		"thread": "cpp",
 		"variant": "cpp",
 		"format": "cpp",
-		"__nullptr": "cpp"
+		"__nullptr": "cpp",
+		"*.tcc": "cpp",
+		"ranges": "cpp"
 	}
 }
