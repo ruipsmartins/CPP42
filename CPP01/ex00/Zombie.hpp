@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ruidos-s <ruidos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:48:06 by ruidos-s          #+#    #+#             */
-/*   Updated: 2025/04/30 15:44:11 by ruidos-s         ###   ########.fr       */
+/*   Updated: 2025/05/14 10:21:13 by ruidos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ public:
 	~Zombie(void);
 	void announce(void);
 };
+
+Zombie *newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif

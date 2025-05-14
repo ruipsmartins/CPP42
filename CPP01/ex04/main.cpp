@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruidos-s <ruidos-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ruidos-s <ruidos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:26:13 by ruidos-s          #+#    #+#             */
-/*   Updated: 2025/05/06 12:27:42 by ruidos-s         ###   ########.fr       */
+/*   Updated: 2025/05/14 10:17:30 by ruidos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "Usage: ./replace <filename> <s1> <s2>" << std::endl;
+		std::cout << "Wrong args: ./replace <filename> <s1> <s2>" << std::endl;
 		return (1);
 	}
 
