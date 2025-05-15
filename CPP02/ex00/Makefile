@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = fixed
-SRCS = main.cpp
+SRCS = main.cpp Fixed.cpp
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++
