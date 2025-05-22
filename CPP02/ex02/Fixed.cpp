@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ruidos-s <ruidos-s@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/22 12:45:20 by ruidos-s          #+#    #+#             */
+/*   Updated: 2025/05/22 12:45:27 by ruidos-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Fixed.hpp"
 
@@ -27,7 +39,7 @@ Fixed::Fixed(const Fixed &src) // Copy constructor)
 
 Fixed &Fixed::operator=(const Fixed &src) // Assignment operator
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &src)
 	{
 		this->_fixedPointValue = src.getRawBits();;
@@ -37,18 +49,18 @@ Fixed &Fixed::operator=(const Fixed &src) // Assignment operator
 
 Fixed::~Fixed() // Destructor
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 // getter and setter for _fixedPointValue
 int Fixed::getRawBits() const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return _fixedPointValue;
 }
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	//std::cout << "setRawBits member function called" << std::endl;
 	_fixedPointValue = raw;
 }
 
