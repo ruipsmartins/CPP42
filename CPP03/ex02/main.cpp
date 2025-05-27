@@ -28,7 +28,7 @@ int main()
     frag3.attack("target4");
 
     std::cout << "\n--- Reducing energy to zero ---\n";
-    for (int i = 0; i < 50; ++i)
+    for (int i = 0; i < 100; ++i)
         frag1.attack("dummy");
 
     std::cout << "\n--- Testing actions with no energy ---\n";

@@ -7,19 +7,15 @@
 
 class ScavTrap : public ClapTrap
 {
+public:
+	ScavTrap(); // default constructor
+	ScavTrap(std::string name); // constructor
+	ScavTrap(const ScavTrap &other); // copy constructor
+	ScavTrap &operator=(const ScavTrap &other); // copy assignment operator
+	~ScavTrap(); // destructor
 
-	public:
-		ScavTrap(); // default constructor
-		ScavTrap(std::string name); // constructor
-		ScavTrap(const ScavTrap &other); // copy constructor
-		ScavTrap &operator=(const ScavTrap &other); // copy assignment operator
-		~ScavTrap(); // destructor
-
-		void attack(const std::string& target);
-		void guardGate();
-
-	
-
+	void attack(const std::string& target);
+	void guardGate();
 
 };
 
