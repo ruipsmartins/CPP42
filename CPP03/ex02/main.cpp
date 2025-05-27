@@ -2,39 +2,40 @@
 #include <string>
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    std::cout << "\n--- Criar FragTrap frag1 ---\n";
+    std::cout << "\n--- Creating FragTrap frag1 ---\n";
     FragTrap frag1("frag1");
 
-    std::cout << "\n--- Testar ataques e reparações ---\n";
+    std::cout << "\n--- Testing attacks and repairs ---\n";
     frag1.attack("target1");
     frag1.takeDamage(30);
     frag1.beRepaired(20);
     frag1.attack("target2");
 
-    std::cout << "\n--- Testar método especial highFivesGuys() ---\n";
+    std::cout << "\n--- Testing special method highFivesGuys() ---\n";
     frag1.highFivesGuys();
 
-    std::cout << "\n--- Testar cópia por construtor ---\n";
+    std::cout << "\n--- Testing copy constructor ---\n";
     FragTrap frag2(frag1);
     frag2.attack("target3");
 
-    std::cout << "\n--- Testar atribuição por operador ---\n";
+    std::cout << "\n--- Testing assignment operator ---\n";
     FragTrap frag3;
     frag3 = frag1;
     frag3.attack("target4");
 
-    std::cout << "\n--- Reduzir energia até zero ---\n";
-    for (int i = 0; i < 101; ++i)
+    std::cout << "\n--- Reducing energy to zero ---\n";
+    for (int i = 0; i < 50; ++i)
         frag1.attack("dummy");
 
-    std::cout << "\n--- Testar ações sem energia ---\n";
+    std::cout << "\n--- Testing actions with no energy ---\n";
     frag1.attack("noEnergyTarget");
     frag1.beRepaired(10);
     frag1.highFivesGuys();
 
-    std::cout << "\n--- Fim do programa ---\n";
+    std::cout << "\n--- End of program ---\n";
     return 0;
 }

@@ -1,5 +1,5 @@
-NAME = serena
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME = frag
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++
