@@ -11,11 +11,11 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "ClapTrap constructor called" << std::endl;
-    this->_name = name;
+	this->_name = name;
     this->_hit_points = 10;
     this->_energy_points = 10;
     this->_attack_damage = 5;
+    std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 
@@ -34,11 +34,11 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap destructor called." << std::endl;
-	std::cout << "name: " << this->_name << std::endl;
+	/*std::cout << "name: " << this->_name << std::endl;
 	std::cout << "hit points: " << this->_hit_points << std::endl;
 	std::cout << "energy points: " << this->_energy_points << std::endl;
-	std::cout << "attack damage: " << this->_attack_damage << std::endl;
+	std::cout << "attack damage: " << this->_attack_damage << std::endl;*/
+    std::cout << "ClapTrap destructor called." << std::endl;
 }
 
 bool checkPoints(int hit_points, int energy_points, std::string name)
