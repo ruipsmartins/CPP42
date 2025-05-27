@@ -22,13 +22,19 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
     std::cout << "ClapTrap copy constructor called" << std::endl;
-    *this = other;
+    this->_name = other._name;
+	this->_hit_points = other._hit_points;
+	this->_energy_points = other._energy_points;
+	this->_attack_damage = other._attack_damage;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
     std::cout << "ClapTrap copy assignment operator called" << std::endl;
     this->_name = other._name;
+	this->_hit_points = other._hit_points;
+	this->_energy_points = other._energy_points;
+	this->_attack_damage = other._attack_damage;
     return *this;
 }
 

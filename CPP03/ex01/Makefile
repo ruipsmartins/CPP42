@@ -1,4 +1,4 @@
-NAME = serena
+NAME = scavtrap
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
