@@ -44,4 +44,4 @@ int main()
     return 0;
 }
 
-bool checkPoints(int hit_points, int energy_points, std::string name);
+//bool checkPoints(int hit_points, int energy_points, std::string name);
