@@ -7,8 +7,8 @@ class Dog : public Animal
 {
     public:
         Dog(std::string type) : Animal(type){ std::cout << "Dog constructor called\n";}
-        virtual void makeSound() const{std::cout << "Woof!\n";}
-        virtual ~Dog(){std::cout << "Dog destructor called\n";}
+        void makeSound() const {std::cout << "Woof!\n";} //overriding the Animal class's makeSound function
+        ~Dog(){std::cout << "Dog destructor called\n";}
 };
 
 #endif

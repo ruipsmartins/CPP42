@@ -10,9 +10,13 @@ class Animal
     protected:
         std::string type;
     public:
-        Animal(std::string type){this->type = type; std::cout << "Animal constructor called\n";}
-        virtual void makeSound() const {std::cout << "animal sound\n";}
-        virtual ~Animal(){std::cout << "Animal destructor called\n";}
+        Animal(std::string type);
+        Animal(const Animal &other);
+        Animal &operator=(const Animal &other);
+        virtual void makeSound() const;
+        virtual ~Animal();
+
+        std::string getType() const;
 };
 
 #endif
