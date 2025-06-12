@@ -43,5 +43,3 @@ int main()
     std::cout << "\n--- End of main ---\n";
     return 0;
 }
-
-//bool checkPoints(int hit_points, int energy_points, std::string name);

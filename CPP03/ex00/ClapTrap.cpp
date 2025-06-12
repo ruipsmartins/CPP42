@@ -40,10 +40,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	/*std::cout << "name: " << this->_name << std::endl;
-	std::cout << "hit points: " << this->_hit_points << std::endl;
-	std::cout << "energy points: " << this->_energy_points << std::endl;
-	std::cout << "attack damage: " << this->_attack_damage << std::endl;*/
     std::cout << "ClapTrap destructor called." << std::endl;
 }
 
