@@ -9,7 +9,7 @@ int main()
 	{
 		std::cout << "[ Animal tests ]" << std::endl;
 
-		const Animal *dog = new Dog();
+		const Animal *dog = new Dog("Bulldog");
 		const Animal *cat = new Cat();
 
 		std::cout << "dog type: " << dog->getType() << std::endl;
