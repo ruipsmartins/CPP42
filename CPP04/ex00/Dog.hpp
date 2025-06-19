@@ -2,13 +2,18 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include <iostream>
+#include <string>
 
 class Dog : public Animal
 {
-    public:
-        Dog(std::string type) : Animal(type){ std::cout << "Dog constructor called\n";}
-        void makeSound() const {std::cout << "Woof!\n";} //overriding the Animal class's makeSound function
-        ~Dog(){std::cout << "Dog destructor called\n";}
+public:
+	Dog();
+	Dog(std::string type);
+	Dog(const Dog &other);
+	Dog &operator=(const Dog &other);
+	~Dog();
+	void makeSound() const;
 };
 
 #endif

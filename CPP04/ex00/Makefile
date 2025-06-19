@@ -1,5 +1,5 @@
 NAME = ex00
-SRCS = main.cpp Animal.cpp Dog.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++
