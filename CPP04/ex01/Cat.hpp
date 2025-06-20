@@ -7,6 +7,9 @@
 
 class Cat : public Animal
 {
+private:
+	Brain *brain;
+
 public:
 	Cat();
 	Cat(std::string type);
@@ -14,6 +17,7 @@ public:
 	Cat &operator=(const Cat &other);
 	~Cat();
 	void makeSound() const;
+	Brain *getBrain() const;
 };
 
 #endif
