@@ -15,11 +15,11 @@ void testDogCopy()
 	originalDog->getBrain()->setIdea(0, "running around");
 	std::cout << "Original Dog's idea: " << originalDog->getBrain()->getIdea(0) << std::endl;
 	// copy constructor
-	// Dog *copyDog = new Dog(*originalDog);
+	Dog *copyDog = new Dog(*originalDog);
 
-	// copy asingnment operator
-	Dog *copyDog = new Dog();
-	*copyDog = *originalDog;
+	// asingnment operator
+	/* Dog *copyDog = new Dog();
+	*copyDog = *originalDog; */
 
 	std::cout << "Copy Dog's idea before change: " << copyDog->getBrain()->getIdea(0) << std::endl;
 
@@ -32,20 +32,20 @@ void testDogCopy()
 	delete copyDog;
 }
 
-//function to test the deep copy of Cat
+// function to test the deep copy of Cat
 void testCatCopy()
 {
 	std::cout << "-----Testing Cat copy constructor and assignment operator-----" << std::endl;
 
-	Cat* originalCat = new Cat();
+	Cat *originalCat = new Cat();
 
 	originalCat->getBrain()->setIdea(0, "staring at the wall");
 	std::cout << "Original Cat's idea: " << originalCat->getBrain()->getIdea(0) << std::endl;
 	// copy constructor
 	// Cat* copyCat = new Cat(*originalCat);
 
-	// copy assignment operator
-	Cat* copyCat = new Cat();
+	// assignment operator
+	Cat *copyCat = new Cat();
 	*copyCat = *originalCat;
 
 	std::cout << "Copy Cat's idea before change: " << copyCat->getBrain()->getIdea(0) << std::endl;
@@ -60,34 +60,36 @@ void testCatCopy()
 }
 int main()
 {
-	/* { //42 test
+	{ // 42 test
+		std::cout << "-----Testing Animal class-----" << std::endl;
 		const Animal *j = new Dog();
 		const Animal *i = new Cat();
 		delete j; // should not create a leak
 		delete i;
-	} */
+	}
 
-	{	//testing deep copy of Dog and cat
+	{ // testing deep copy of Dog and cat
 		testDogCopy();
 		testCatCopy();
 	}
-	
-	/* {	//test with array of animals
-		Animal *animals[10];
-		for (int i = 0; i < 5; ++i)
+
+	{ // test with array of animals
+		int animalCount = 10;
+		std::cout << "-----Testing array of Animals-----" << std::endl;
+		Animal *animals[animalCount];
+		for (int i = 0; i < animalCount; ++i)
 		{
-			animals[i] = new Dog();
+			if (i < animalCount / 2)
+				animals[i] = new Dog();
+			else
+				animals[i] = new Cat();
 		}
-		for (int i = 5; i < 10; ++i)
-		{
-			animals[i] = new Cat();
-		}
-		for (int i = 0; i < 10; ++i)
+		for (int i = 0; i < animalCount; ++i)
 		{
 			std::cout << "Animal " << i << " type: " << animals[i]->getType() << std::endl;
 			animals[i]->makeSound();
 			delete animals[i];
 		}
-	} */
+	}
 	return 0;
 }
