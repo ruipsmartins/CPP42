@@ -1,5 +1,5 @@
-NAME = ex01
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp
+NAME = ex02
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++

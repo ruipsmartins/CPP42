@@ -3,39 +3,29 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
 	try
 	{
-		Bureaucrat jann("Jann", 50);
-		Bureaucrat rui("Rui", 1);
-		Bureaucrat ze("Zé", 150);
+		// Cria um burocrata com rank suficiente para assinar e executar
+		Bureaucrat bob("Bob", 1);
 
-		AForm taxForm("Tax Form", 30, 10);
-		AForm leaveForm("Leave Form", 100, 50);
+		// Cria o formulário
+		ShrubberyCreationForm f("home");
 
-		std::cout << taxForm << std::endl;
-		std::cout << leaveForm << std::endl;
+		// Tenta assinar
+		bob.signForm(f);
 
-		std::cout << "\n--- Testing signForm ---" << std::endl;
+		// Tenta executar
+		bob.executeForm(f);
 
-		jann.signForm(taxForm);	  // Deve falhar (50 > 30)
-		std::cout << taxForm << std::endl;
-		rui.signForm(taxForm);	  // Deve assinar (1 < 30)
-		std::cout << taxForm << std::endl;
-		ze.signForm(leaveForm);  // Deve falhar (150 > 100)
-		std::cout << leaveForm << std::endl;
-		jann.signForm(leaveForm); // Deve assinar (50 < 100)
-		std::cout << leaveForm << std::endl;
-
-		std::cout << "\n--- Final forms status ---" << std::endl;
-		std::cout << taxForm << std::endl;
-		std::cout << leaveForm << std::endl;
+		std::cout << "Teste concluído. Verifica o ficheiro 'home_shrubbery'." << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cerr << "Erro: " << e.what() << std::endl;
 	}
 
 	return 0;

@@ -50,6 +50,9 @@ public:
 	public:
 		const char *what() const throw();
 	};
+
+protected:
+    virtual void executeAction() const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, const AForm &form);
