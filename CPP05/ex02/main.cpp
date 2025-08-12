@@ -9,8 +9,9 @@ int main()
 {
 	try
 	{
-		// Cria um burocrata com rank suficiente para assinar e executar
-		Bureaucrat bob("Bob", 1);
+		// Cria um burocrata com rank suficiente para assinar e executar Required grades: sign 145, exec 137
+		Bureaucrat bob("Bob", 150);
+		Bureaucrat ted("Ted", 1);
 
 		// Cria o formulário
 		ShrubberyCreationForm f("home");
@@ -19,9 +20,9 @@ int main()
 		bob.signForm(f);
 
 		// Tenta executar
-		bob.executeForm(f);
+		//bob.executeForm(f);
+		ted.executeForm(f);
 
-		std::cout << "Teste concluído. Verifica o ficheiro 'home_shrubbery'." << std::endl;
 	}
 	catch (std::exception &e)
 	{
