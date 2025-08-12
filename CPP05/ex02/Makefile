@@ -1,5 +1,5 @@
 NAME = ex02
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS = $(SRCS:%.cpp=objs/%.o)
 
 CC = c++
@@ -16,7 +16,7 @@ objs/%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf objs
+	rm -rf objs *_shrubbery
 
 fclean: clean
 	rm -f $(NAME)
