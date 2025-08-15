@@ -8,10 +8,10 @@
 
 int main()
 {
-	Bureaucrat boss("Boss", 160);
 
 	try
 	{
+		Bureaucrat boss("Boss", 5);
 		Intern someRandomIntern;
 		
 		std::cout << "===== TESTE ROBOTOMY REQUEST =====\n";
@@ -33,6 +33,7 @@ int main()
 		rpf = someRandomIntern.makeForm("presidential pardon", "Rui");
 		boss.executeForm(*rpf);
 		boss.signForm(*rpf);
+		boss.executeForm(*rpf);
 		delete rpf;
 		
 		std::cout << "\n\n===== TESTE FORMULÁRIO INVÁLIDO =====\n";
