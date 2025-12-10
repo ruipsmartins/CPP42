@@ -1,0 +1,34 @@
+Com base no documento do projeto, o objetivo principal do **Módulo 06 de C++** é aprender sobre as **conversões de tipo (casts)** em C++.
+
+Aqui está um resumo do que precisas de aprender em cada exercício:
+
+**Conceito Central:**
+O mais importante é entender e saber quando usar os diferentes operadores de cast do C++:
+*   `static_cast`
+*   `dynamic_cast`
+*   `reinterpret_cast`
+*   `const_cast`
+
+Para cada exercício, terás de justificar a escolha do tipo de cast que utilizaste.
+
+---
+
+### **Exercício 00: Conversão de tipos escalares**
+
+*   **Objetivo:** Aprender a converter um valor a partir de uma `string` para os tipos `char`, `int`, `float`, e `double`.
+*   **Tarefa:** Vais criar uma classe estática que recebe uma string representando um número ou caractere. O programa deve primeiro detetar o tipo do literal na string, convertê-lo para o seu tipo original e, em seguida, convertê-lo (fazer o "cast") explicitamente para os outros três tipos escalares.
+*   **Principal aprendizagem:** Este exercício foca-se maioritariamente no uso de **`static_cast`** para conversões entre tipos numéricos compatíveis (por exemplo, de `int` para `float`).
+
+### **Exercício 01: Serialização**
+
+*   **Objetivo:** Entender como converter um ponteiro para um tipo inteiro e vice-versa.
+*   **Tarefa:** Vais criar uma classe estática `Serializer` com dois métodos: um que transforma um ponteiro (`Data*`) num tipo inteiro (`uintptr_t`) e outro que faz o inverso. O objetivo é garantir que o ponteiro recuperado é idêntico ao original.
+*   **Principal aprendizagem:** Este exercício é um caso de uso clássico para o **`reinterpret_cast`**, que permite reinterpretar o padrão de bits de um tipo de dados como se fosse outro, neste caso, um ponteiro como um inteiro.
+
+### **Exercício 02: Identificar o tipo real**
+
+*   **Objetivo:** Aprender a identificar o tipo verdadeiro de um objeto numa hierarquia de classes polimórficas (quando tens uma classe base e várias classes derivadas).
+*   **Tarefa:** Vais ter uma classe `Base` e três classes que herdam dela (`A`, `B`, `C`). Terás de criar uma função que identifica e imprime o tipo real do objeto (`A`, `B` ou `C`) quando recebe apenas um ponteiro ou uma referência da classe `Base`. O uso de `typeinfo` é proibido.
+*   **Principal aprendizagem:** A solução correta envolve o uso de **`dynamic_cast`**. Este `cast` é usado especificamente para trabalhar com hierarquias de classes de forma segura em tempo de execução.
+
+Em suma, este projeto força-te a ir além dos casts de estilo C (`(int)variavel`) e a usar as ferramentas que o C++ oferece para realizar conversões de tipo de forma mais segura e explícita. Boa sorte
